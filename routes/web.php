@@ -2,7 +2,9 @@
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('todo.create');
 });
 
-Route::resource('todo','TodosController');
+Route::resource('todo','TodoController');
+
+Route::get('todo/{todo}/complete', 'TodoController@complete')->name('todo.complete');
